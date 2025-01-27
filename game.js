@@ -69,26 +69,34 @@ function gameOver(solutionColor) {
 	setTimeout(() => {
 		$("body").removeClass("game-over");
 	}, 200);
-	$("h1").text("GAME OVER!");
+	$("h1").html("OUPS<br/>GAME OVER!");
 	setTimeout(() => {
-		$("h1").text("Press any key to restart.");
+		startOver();
 	}, 2000);
-	startOver();
 }
 
 function startOver() {
+	$("h1").text("Press me or any key to start");
 	gameStarted = false;
 	gamePattern = [];
 	level = 0;
 }
-//--------------------- EVENTS --------------------------
 
-$(document).on("keypress", function () {
+function startGame() {
 	if (gameStarted == false) {
 		stop;
 		nextSequence();
 		gameStarted = true;
 	}
+}
+//--------------------- EVENTS --------------------------
+
+$(document).on("keypress", function () {
+	startGame();
+});
+
+$("h1").on("click", function () {
+	startGame();
 });
 
 $(".btn").on("click", function () {
@@ -101,7 +109,7 @@ $(".btn").on("click", function () {
 		if (checkAnswer(userClickedPattern.length - 1) == false) {
 			gameOver(gamePattern[userClickedPattern.length - 1]);
 		} else if (userClickedPattern.length == gamePattern.length) {
-			$("h1").text("Well done ! Get ready...");
+			$("h1").html("Well done<br/>Level complete !");
 			setTimeout(() => {
 				nextSequence();
 			}, 2000);
