@@ -48,7 +48,7 @@ function animateFail(currentColor) {
 	$("#" + currentColor).addClass("failed");
 	setTimeout(() => {
 		$("#" + currentColor).removeClass("failed");
-	}, 800);
+	}, 1200);
 }
 
 function checkAnswer(index) {
