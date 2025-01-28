@@ -69,6 +69,7 @@ body {
 	box-shadow: 0 0 20px white;
 	border-width: 30px;
 	border-color: white;
+	background-color: grey;
 }
 
 /* @media (width < 1500px) {
