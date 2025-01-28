@@ -6,24 +6,36 @@ body {
 #level-title {
 	font-family: "Press Start 2P", cursive;
 	font-size: 2.5rem;
-	margin: 5%;
+	margin-bottom: 5%;
 	color: #fef2bf;
 }
 
 .container {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	width: 50%;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	gap: 5%;
+	height: 100%;
+	aspect-ratio: 1/1;
+	max-height: 80vh;
 	margin: auto;
 }
+/* 
+.board {
+	display: flex;
+	justify-content:center;
+	height: 80vh;
+	max-height: 80vh;
+	margin: 50px;
+} */
 
 .btn {
-	margin: 25px;
-	display: inline-block;
-	height: 200px;
-	width: 200px;
-	border: 10px solid black;
+	/* margin: 5%; */
+	/* display: inline-block; */
+	/* width: 80%; */
+	width: 100%;
+	aspect-ratio: 1/1;
+	border: 5% solid black;
 	border-radius: 20%;
 }
 
@@ -59,11 +71,11 @@ body {
 	border-color: white;
 }
 
-@media (width < 1500px) {
+/* @media (width < 1500px) {
 	#level-title {
 		font-family: "Press Start 2P", cursive;
 		font-size: 1.5rem;
 		margin: 2%;
 		color: #fef2bf;
 	}
-}
+} */
